@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-wrapper">
+        <div class="calculator-app">
+            <div class="calculator-face front">
+                <!-- Normal Calculator -->
+                <div class="display">
+                    <input type="text" id="normal-display" readonly>
+                </div>
+                <div class="buttons">
+                    <button class="clear" onclick="normalClear()">C</button>
+                    <button class="backspace" onclick="normalBackspace()">DEL</button>
+                    <button class="operator" onclick="normalAppendOperator('/')">/</button>
+                    <button class="operator" onclick="normalAppendOperator('*')">*</button>
+
+                    <button class="number" onclick="normalAppendNumber('7')">7</button>
+                    <button class="number" onclick="normalAppendNumber('8')">8</button>
+                    <button class="number" onclick="normalAppendNumber('9')">9</button>
+                    <button class="operator" onclick="normalAppendOperator('-')">-</button>
+
+                    <button class="number" onclick="normalAppendNumber('4')">4</button>
+                    <button class="number" onclick="normalAppendNumber('5')">5</button>
+                    <button class="number" onclick="normalAppendNumber('6')">6</button>
+                    <button class="operator" onclick="normalAppendOperator('+')">+</button>
+
+                    <button class="number" onclick="normalAppendNumber('1')">1</button>
+                    <button class="number" onclick="normalAppendNumber('2')">2</button>
+                    <button class="number" onclick="normalAppendNumber('3')">3</button>
+                    <button class="equals" onclick="normalCalculate()">=</button>
+
+                    <button class="number zero" onclick="normalAppendNumber('0')">0</button>
+                    <button class="number" onclick="normalAppendNumber('.')">.</button>
+                </div>
+            </div>
+
+            <div class="calculator-face back">
+                <!-- Percentage Calculator -->
+                <div class="percentage-calculator-content">
+                    <h2>Percentage Calculator</h2>
+                    <div class="display">
+                        <input type="text" id="percentage-display" readonly>
+                    </div>
+                    <div class="buttons">
+                        <button class="clear" onclick="percentageClear()">C</button>
+                        <button class="backspace" onclick="percentageBackspace()">DEL</button>
+                        <button class="empty"></button>
+                        <button class="percentage-op" onclick="setPercentageOperation('xPercentOfY')">X%Y</button>
+
+                        <button class="number" onclick="percentageAppendNumber('7')">7</button>
+                        <button class="number" onclick="percentageAppendNumber('8')">8</button>
+                        <button class="number" onclick="percentageAppendNumber('9')">9</button>
+                        <button class="percentage-op" onclick="setPercentageOperation('xIsWhatPercentOfY')">X% of Y?</button>
+
+                        <button class="number" onclick="percentageAppendNumber('4')">4</button>
+                        <button class="number" onclick="percentageAppendNumber('5')">5</button>
+                        <button class="number" onclick="percentageAppendNumber('6')">6</button>
+                        <button class="percentage-op" onclick="setPercentageOperation('percentageChange')">% Change</button>
+
+                        <button class="number" onclick="percentageAppendNumber('1')">1</button>
+                        <button class="number" onclick="percentageAppendNumber('2')">2</button>
+                        <button class="number" onclick="percentageAppendNumber('3')">3</button>
+                        <button class="equals" onclick="calculatePercentage()">=</button>
+
+                        <button class="number zero" onclick="percentageAppendNumber('0')">0</button>
+                        <button class="number" onclick="percentageAppendNumber('.')">.</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="flip-button" onclick="flipCalculator()">Flip</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
